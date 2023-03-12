@@ -1,0 +1,183 @@
+body {
+    color: #2c3e50;
+    background: #ecf0f1;
+    padding: 0 1em 1em;
+}
+
+h1 {
+    margin: 0;
+    line-height: 2;
+    text-align: center;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    transition: .1s;
+}
+
+.tabs:hover .tab {
+    color: thistle;
+    transition: .1s;
+}
+
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: #353535;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tab-label:hover {
+    background: #272727;
+    transition: .3s;
+}
+
+.tab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+    display: none;
+}
+
+.tabs:hover .tab-label::after {
+    display: block;
+}
+
+
+.tab-content {
+    width: 20vw;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 1em;
+    background: white;
+    transition: all 0.35s;
+    cursor: pointer;
+}
+
+.content-meme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: auto;
+}
+
+.tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: #353535;
+    cursor: pointer;
+}
+
+.tab-close:hover {
+    background: #272727;
+}
+
+input[type="radio"]:checked + .tab-label {
+    background: #272727;
+    color: thistle;
+}
+
+input[type="radio"]:checked + .tab-label::after {
+    transform: rotate(90deg);
+}
+
+input[type="radio"]:checked ~ .tab-content {
+    max-height: 40vh;
+    padding: 1em;
+}
+
+input[type="radio"]:hover + .tab-label::after {
+    transform: rotate(90deg);
+}
+
+input[type="radio"]:hover ~ .tab-content {
+    max-height: 40vh;
+    padding: 1em;
+    transition: .5s;
+}
+
+.tabs input[type="radio"]:hover + .tab-label::after {
+    display: block;
+}
+
+
+@media screen and (max-width: 767px) {
+    .tab-label {
+        font-size: 12px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .tab-label {
+        font-size: 16px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tab-label {
+        font-size: 20px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
+}

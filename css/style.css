@@ -37,7 +37,7 @@ input {
     transition: .1s;
 }
 
-.tab:hover {
+.tabs:hover .tab {
     color: thistle;
     transition: .1s;
 }
@@ -72,15 +72,21 @@ input {
 
 
 .tab-content {
+    width: 20vw;
+    overflow: hidden;
     max-height: 0;
     padding: 0 1em;
     background: white;
     transition: all 0.35s;
+    cursor: pointer;
 }
 
 .content-meme {
-    width: 20vw;
-    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: auto;
 }
 
 .tab-close {
@@ -122,4 +128,56 @@ input[type="radio"]:hover ~ .tab-content {
 
 .tabs input[type="radio"]:hover + .tab-label::after {
     display: block;
+}
+
+
+@media screen and (max-width: 767px) {
+    .tab-label {
+        font-size: 12px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .tab-label {
+        font-size: 16px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tab-label {
+        font-size: 20px;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-meme {
+        width: 70%;
+        height: auto;
+    }
 }
